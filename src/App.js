@@ -5,6 +5,7 @@ import Contracts from './Containers/Contracts/Contracts'
 import { BrowserRouter,Route,Switch } from 'react-router-dom';
 import ConsultantProfile from './Containers/ConsultantProfile/ConsultantProfile';
 import PastProjects from './Containers/PastProjects/PastProjects';
+import Disclaimer from './Containers/Disclaimers/Disclaimer'
 function App() {
   return (
     <BrowserRouter>
@@ -14,6 +15,7 @@ function App() {
       <Switch>
         <Route path="/profile/:org" component={ConsultantProfile} />
         <Route path="/past-projects/:org" component={PastProjects}/>
+        <Route path="/disclaimers/:org" component={Disclaimer}/>
         <Route path="/" component={Contracts} />
       </Switch>
     </div>

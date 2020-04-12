@@ -30,10 +30,13 @@ class PastProjects extends Component{
         ]
     }
 
+    handleClickNext = (org) =>{
+        this.props.history.push('/disclaimers/'+org)
+    }
    
 
     render(){
-        const projectForms = <ProjectForm/>
+        const projectForms = <ProjectForm clickNext={(event)=>this.handleClickNext(this.props.match.params.org)}/>
         
         return(<div>
                     <h1 style={{color:'white', 
