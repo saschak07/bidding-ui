@@ -1,0 +1,24 @@
+.project-body{
+    width: 80%;
+    margin-top: 2%;
+    margin-left: 10%;
+    border-radius: 25px;
+    opacity: 0.95;
+}
+
+.project-content{
+    
+    padding: 5%;
+    margin-left: 2%;
+
+}
+.project-button{
+    margin-top: 5%;
+    margin-left: 90%;
+}
+.project-header{
+    font-family: "Times New Roman", Times, serif;
+    color: blue;
+    font-weight: 900;
+    text-decoration: underline;
+}
