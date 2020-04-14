@@ -6,6 +6,7 @@ import { BrowserRouter,Route,Switch } from 'react-router-dom';
 import ConsultantProfile from './Containers/ConsultantProfile/ConsultantProfile';
 import PastProjects from './Containers/PastProjects/PastProjects';
 import Disclaimer from './Containers/Disclaimers/Disclaimer'
+import PDFview from './Containers/PDFViewer/PDFViewer'
 function App() {
   return (
     <BrowserRouter>
@@ -16,6 +17,7 @@ function App() {
         <Route path="/profile/:org" component={ConsultantProfile} />
         <Route path="/past-projects/:org" component={PastProjects}/>
         <Route path="/disclaimers/:org" component={Disclaimer}/>
+        <Route path="/pdf/:name" component={PDFview}/>
         <Route path="/" component={Contracts} />
       </Switch>
     </div>

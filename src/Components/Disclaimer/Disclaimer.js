@@ -1,9 +1,10 @@
 import React from 'react'
 import './Disclaimer.css'
 
-const disclaimer = () => {
+const disclaimer = (props) => {
     return (
         <div className="w3-card w3-animate-zoom w3-white disclaimer-body">
+            
             <div className="w3-container w3-white w3-cell disclaimer-content">
                <centre> <h2 className="code-header">CODE OF ETHICAL CONDUCT IN BUSINESS FOR BIDDERS AND PROVIDERS</h2></centre>
                 <p>(Under Section 93 of the Public Procurement and Disposal of Public Assets Act, 2003)</p>
@@ -50,8 +51,9 @@ const disclaimer = () => {
                 <label className="w3-text-blue"><b>Consulting organization:</b></label>
                 <input className="w3-input w3-border" type="text"/>
                 <button className="w3-btn w3-blue project-button"
-                >Next</button>
+                onClick={props.clickNext}>Next</button>
             </div>
+            
         </div>
     )
 }

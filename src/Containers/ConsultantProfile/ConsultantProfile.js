@@ -1,11 +1,43 @@
 import React , {Component} from 'react'
 import './ConsultantProfile.css'
 import Statusbar from '../../Components/Status-bar/Status-bar'
+import axios from '../../axios'
+import { connect } from 'react-redux';
+import * as actionType from '../Store/action'
 class ConsultantProfile extends Component{
 
+    state={
+        profile:{
+            name:null,
+            address:null
+        }
+    }
+
     handleNextButton =(org) =>{
+        console.log(this.state.profile)
+        axios.post('/docService/contractor',this.state.profile)
+        .then(response => {
+            console.log(response)
+        })
+        .catch(error => {
+            console.log(error)
+        })
+        this.props.loadContractorName(this.state.profile)
         this.props.history.push('/past-projects/'+org)
     }
+
+    handleNameChange =(event) =>{
+        const updatedProfile = this.state.profile
+        updatedProfile.name=event.target.value;
+        this.setState({profile:updatedProfile})
+    }
+
+    handleAddressChange= (event) => {
+        const updatedProfile = this.state.profile
+        updatedProfile.address=event.target.value;
+        this.setState({profile:updatedProfile})
+    }
+
     render(){
         return (
             <div>
@@ -21,10 +53,12 @@ class ConsultantProfile extends Component{
          <div className="w3-container profile-content">
 
                 <label className="w3-text-blue"><b>Consultant's Name</b></label>
-                <input className="w3-input w3-border" type="text"/>
+                <input className="w3-input w3-border" type="text"
+                onChange={this.handleNameChange} value={this.state.profile.name}/>
                 
                 <label className="w3-text-blue"><b>Address</b></label>
-                <textarea className="w3-input w3-border" />
+                <textarea className="w3-input w3-border" 
+                 onChange={this.handleAddressChange} value={this.state.profile.address}/>
 
                 <button className="w3-btn w3-blue profile-button"
                 onClick={(event) => 
@@ -36,5 +70,16 @@ class ConsultantProfile extends Component{
         )
     }
 }
+const mapStateToProps = state => {
+    return {
+        details: state.contractorDetails
+    };
+};
 
-export default ConsultantProfile;
+const mapDispatchToProps = dispatch => {
+    return {
+        loadContractorName: (details) => dispatch({type: actionType.SET_NAME,details }),
+
+    }
+}
+export default connect(mapStateToProps,mapDispatchToProps)(ConsultantProfile);

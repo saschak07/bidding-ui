@@ -1,6 +1,7 @@
 import React , {Component} from 'react'
 import Contractdetails from '../../Components/ContractsDetails/ContractDetails'
 import './Contracts.css'
+
 class Contracts extends Component{
     state = {
         cotractList : [
