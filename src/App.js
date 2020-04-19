@@ -6,7 +6,9 @@ import { BrowserRouter,Route,Switch } from 'react-router-dom';
 import ConsultantProfile from './Containers/ConsultantProfile/ConsultantProfile';
 import PastProjects from './Containers/PastProjects/PastProjects';
 import Disclaimer from './Containers/Disclaimers/Disclaimer'
-import PDFview from './Containers/PDFViewer/PDFViewer'
+import TemplateUpload from './Containers/TempleteUpdate/TemplateUpdate'
+import InsertIdea from './Containers/InsertIdea/InsertIdea'
+import BidDownloader from './Containers/BidDownloader/BidDownloader'
 function App() {
   return (
     <BrowserRouter>
@@ -17,7 +19,9 @@ function App() {
         <Route path="/profile/:org" component={ConsultantProfile} />
         <Route path="/past-projects/:org" component={PastProjects}/>
         <Route path="/disclaimers/:org" component={Disclaimer}/>
-        <Route path="/pdf/:name" component={PDFview}/>
+        <Route path="/insert-idea/:org" component={InsertIdea}/>
+        <Route path="/donwloader/:org" component={BidDownloader}/>
+        <Route path="/template-upload" component={TemplateUpload}/>
         <Route path="/" component={Contracts} />
       </Switch>
     </div>
