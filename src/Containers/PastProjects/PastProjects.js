@@ -12,6 +12,7 @@ class PastProjects extends Component{
         details: {
         name:null,
         address:null,
+        bidding_for_client:null,
         experince: 
             {
                 projectId:uuidv4(),
@@ -42,6 +43,7 @@ componentDidMount(){
     const updatedInfo = this.state.details;
     updatedInfo.name = this.props.details.name;
     updatedInfo.address = this.props.details.address;
+    updatedInfo.bidding_for_client = this.props.details.bidding_for_client;
     this.setState({details:updatedInfo})
 }
 

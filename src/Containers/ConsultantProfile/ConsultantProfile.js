@@ -9,19 +9,23 @@ class ConsultantProfile extends Component{
     state={
         profile:{
             name:null,
-            address:null
+            address:null,
+            bidding_for_client:null
         }
     }
 
     handleNextButton =(org) =>{
         console.log(this.state.profile)
-        axios.post('/docService/contractor',this.state.profile)
-        .then(response => {
-            console.log(response)
-        })
-        .catch(error => {
-            console.log(error)
-        })
+        const updatedProfile = this.state.profile
+        updatedProfile.bidding_for_client = this.props.match.params.org
+        this.setState({profile:updatedProfile})
+        // axios.post('/docService/contractor',this.state.profile)
+        // .then(response => {
+        //     console.log(response)
+        // })
+        // .catch(error => {
+        //     console.log(error)
+        // })
         this.props.loadContractorName(this.state.profile)
         this.props.history.push('/past-projects/'+org)
     }

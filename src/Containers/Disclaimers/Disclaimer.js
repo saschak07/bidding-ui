@@ -7,7 +7,7 @@ class Disclaimer extends Component{
 
     handleNext  =(org) =>{
         console.log(this.props.details.name);
-        this.props.history.push('/pdf/'+this.props.details.name)
+        this.props.history.push('/insert-idea/'+org)
     }
 
     render(){
