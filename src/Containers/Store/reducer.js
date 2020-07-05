@@ -9,7 +9,8 @@ const reducer = (state = initialState,action) => {
             return {
                 contractorDetails:action.details,
             }
+        default: 
+        return state
     }
-    return state;
 }
 export default reducer

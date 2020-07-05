@@ -1,5 +1,6 @@
 import React from 'react'
 import './ProjectForm.css'
+import * as ProjectAttributes from './ProjectAttributes'
 const projectForm = (props) => {
     return(
             <div className="w3-card w3-animate-zoom w3-white project-body">
@@ -7,64 +8,61 @@ const projectForm = (props) => {
 
                 <label className="w3-text-blue"><b>Assignment name</b></label>
                 <input className="w3-input w3-border" type="text"
-                onChange={props.assignmentNameChange} value={props.assignmentName}/>
+                onChange={(event)=>props.fieldChange(event,ProjectAttributes.ASSIGNMENT_NAME)} value={props.projectDetails.assignmentName}/>
                 
                 <label className="w3-text-blue"><b>Location within country</b></label>
                 <input className="w3-input w3-border" type="text"
-                onChange={props.locationChange} value={props.location}/>
+                onChange={(event)=>props.fieldChange(event,ProjectAttributes.LOCATION)} value={props.projectDetails.location}/>
 
                 <label className="w3-text-blue"><b>Name of client</b></label>
                 <input className="w3-input w3-border" type="text"
-                onChange={props.clientNameChange} value={props.clientName}/>
+                onChange={(event)=>props.fieldChange(event,ProjectAttributes.CLIENT_NAME)} value={props.projectDetails.clientName}/>
                 <label className="w3-text-blue"><b>Address</b></label>
                 <input className="w3-input w3-border" type="text"
-                onChange={props.addressChange} value={props.address}/>
+                onChange={(event)=>props.fieldChange(event,ProjectAttributes.ADDRESS)} value={props.projectDetails.address}/>
                 <label className="w3-text-blue"><b>Start date</b></label>
 
                 <input className="w3-input w3-border" type="date"
-                onChange={props.startDateChange} value={props.startDate}/>
+                onChange={(event)=>props.fieldChange(event,ProjectAttributes.START_DATE)} value={props.projectDetails.startDate}/>
                 <label className="w3-text-blue"><b>Completion date</b></label>
                 <input className="w3-input w3-border" type="date"
-                onChange={props.completionDateChang} value={props.completionDate}/>
+                onChange={(event)=>props.fieldChange(event,ProjectAttributes.COMPLETIION_DATE)} value={props.projectDetails.completionDate}/>
                 <label className="w3-text-blue"><b>Name of Associated Consultants, if any</b></label>
                 <input className="w3-input w3-border" type="text"
-                onChange={props.associateConsultantChange} value={props.associateConsultant}/>
+                onChange={(event)=>props.fieldChange(event,ProjectAttributes.ASSOCIATE_CONSULTANT)} value={props.projectDetails.associateConsultant}/>
  
         </div> 
         <div className="w3-container w3-white w3-cell project-content">
                 <label className="w3-text-blue"><b>Country</b></label>
                 <input className="w3-input w3-border" type="text"
-                onChange={props.countryChange} value={props.country}/>
+                onChange={(event)=>props.fieldChange(event,ProjectAttributes.COUNTRY)} value={props.projectDetails.country}/>
 
                 <label className="w3-text-blue"><b>Professional Staff provided by consultant (profiles)</b></label>
                 <input className="w3-input w3-border" type="text"
-                onChange={props.staffChange} value={props.staff}/>
+                onChange={(event)=>props.fieldChange(event,ProjectAttributes.STAFF)} value={props.projectDetails.staff}/>
 
                 <label className="w3-text-blue"><b>No. of Staffs</b></label>
                 <input className="w3-input w3-border" type="text"
-                onChange={props.noOfStaffChange} value={props.noOfStaff}/>
+                onChange={(event)=>props.fieldChange(event,ProjectAttributes.NO_OF_STAFF)} value={props.projectDetails.noOfStaff}/>
                 <label className="w3-text-blue"><b>Duration of assignment</b></label>
                 <input className="w3-input w3-border" type="text"
-                onChange={props.durationChange} value={props.duration}/>
+                onChange={(event)=>props.fieldChange(event,ProjectAttributes.DURATION)} value={props.projectDetails.duration}/>
                 <label className="w3-text-blue"><b>Approx. Value of services (in Current US$):</b></label>
                 <input className="w3-input w3-border" type="text"
-                onChange={props.approxValueChange} value={props.approxValue}/>
-                {/* <label className="w3-text-blue"><b>No of Months of Professional Staff provided by Associated Consultants:</b></label>
-                <input className="w3-input w3-border" type="text"
-                onChange={props.approxValueChange} value={props.approxValue}/> */}
+                onChange={(event)=>props.fieldChange(event,ProjectAttributes.APPROX_VALUE)} value={props.projectDetails.approxValue}/>
 
 
         </div>
         <div className="w3-container project-content">
                 <label className="w3-text-blue"><b>Name of senior staff (Project Director/Coordinator, Team Leader) involved and functions performed:</b></label>
                 <input className="w3-input w3-border" type="text"
-                onChange={props.snr_staffChange} value={props.snr_staff}/>
+                onChange={(event)=>props.fieldChange(event,ProjectAttributes.SNR_STAFF)} value={props.projectDetails.snr_staff}/>
                 <label className="w3-text-blue"><b>Narrative description of Project:</b></label>
                 <textarea className="w3-input w3-border"
-                onChange={props.project_descChange} value={props.project_desc}/>
+                onChange={(event)=>props.fieldChange(event,ProjectAttributes.PROJECT_DESC)} value={props.projectDetails.project_desc}/>
                 <label className="w3-text-blue"><b>Description of actual services provided by your Staff:</b></label>
                 <textarea className="w3-input w3-border"
-                onChange={props.service_descChange} value={props.service_desc}/>
+                onChange={(event)=>props.fieldChange(event,ProjectAttributes.SERVICE_DESC)} value={props.projectDetails.service_desc}/>
                 <button className="w3-btn w3-blue project-button"
                 onClick={props.clickNext}>Next</button>
         </div>

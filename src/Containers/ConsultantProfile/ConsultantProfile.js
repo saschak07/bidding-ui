@@ -1,7 +1,6 @@
 import React , {Component} from 'react'
 import './ConsultantProfile.css'
 import Statusbar from '../../Components/Status-bar/Status-bar'
-import axios from '../../axios'
 import { connect } from 'react-redux';
 import * as actionType from '../Store/action'
 class ConsultantProfile extends Component{
