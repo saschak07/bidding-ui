@@ -25,7 +25,7 @@ class BidDownloader extends Component{
 <div className="w3-container idea-content">
 <label className="w3-text-blue"><b>Bid documnet is ready, to view in details click download</b></label><br/>
 <br/><br/>
- <a href={"http://localhost:9000/docService/contractor/getFile/"+this.state.contractorId}><button className="w3-btn w3-blue ">Download ...</button></a>
+ <a href={"https://bidding-service.herokuapp.com/docService/contractor/getFile/"+this.state.contractorId}><button className="w3-btn w3-blue ">Download ...</button></a>
        </div>
 </div>
    </div>:<div style={{color : 'white'}}>loading...</div>
