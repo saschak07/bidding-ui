@@ -9,7 +9,7 @@ class InsertIdea extends Component{
 
     state = {
         selectedFile : null,
-        contractorName : null
+        contractorId : null
     }
 
     handlefileChange = (event) => {
@@ -19,7 +19,7 @@ class InsertIdea extends Component{
     handleUpload = () => {
         const form = new FormData();
         form.append("file",this.state.selectedFile,this.state.selectedFile.name)
-        axios.post("/docService/contractor/uploadFile/"+this.state.contractorName
+        axios.post("/docService/contractor/uploadFile/"+this.state.contractorId
         ,form)
         .then(response =>{
             alert("file has been successfully uploaded!")
@@ -31,23 +31,24 @@ class InsertIdea extends Component{
     }
 
     componentDidMount() {
-        this.setState({contractorName : this.props.details.name})
+        console.log(this.props.details)
+        this.setState({contractorId : this.props.details.contractorId})
     }
 
     render(){
-        const uplaodBox = this.state.contractorName?
+        const uplaodBox = this.state.contractorId?
         <div>
         <h1 style={{color:'white', 
        marginLeft:'2%',
        textDecoration:'underline'}}>
        {this.props.match.params.org}</h1>
        <p style={{color:'white',marginLeft:'2%'}}>
-       Upload plan of actions document here and click next
+       Upload the implementation related documents here and click next to proceed!
        </p>
-       <Statusbar page='profile'/>
+       <Statusbar page='finalSubmission'/>
    <div className="w3-card w3-animate-zoom w3-white profile-body">
 <div className="w3-container idea-content">
-<label className="w3-text-blue"><b>upload template file here</b></label><br/>
+<label className="w3-text-blue"><b>upload attachment here! (file with .docx extension)</b></label><br/>
 <input type="file" onChange={(event => this.handlefileChange(event))}/><br/><br/>
 <button className="w3-btn w3-blue "
        onClick={(event) => 

@@ -9,6 +9,7 @@ import Disclaimer from './Containers/Disclaimers/Disclaimer'
 import TemplateUpload from './Containers/TempleteUpdate/TemplateUpdate'
 import InsertIdea from './Containers/InsertIdea/InsertIdea'
 import BidDownloader from './Containers/BidDownloader/BidDownloader'
+import ProposalList from './Containers/ProposalList/PoposalList'
 function App() {
   return (
     <BrowserRouter>
@@ -22,6 +23,7 @@ function App() {
         <Route path="/insert-idea/:org" component={InsertIdea}/>
         <Route path="/donwloader/:org" component={BidDownloader}/>
         <Route path="/template-upload" component={TemplateUpload}/>
+        <Route path="/proposals" component={ProposalList}/>
         <Route path="/" component={Contracts} />
       </Switch>
     </div>

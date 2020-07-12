@@ -5,13 +5,13 @@ import Statusbar from '../../Components/Status-bar/Status-bar'
 
 class BidDownloader extends Component{
     state = {
-        contractorName : null
+        contractorId : null
     }
     componentDidMount() {
-        this.setState({contractorName : this.props.details.name})
+        this.setState({contractorId : this.props.details.contractorId})
     }
     render(){
-        const uplaodBox = this.state.contractorName?
+        const uplaodBox = this.state.contractorId?
         <div>
         <h1 style={{color:'white', 
        marginLeft:'2%',
@@ -20,12 +20,12 @@ class BidDownloader extends Component{
        <p style={{color:'white',marginLeft:'2%'}}>
        
        </p>
-       <Statusbar page='profile'/>
+       <Statusbar page='finalSubmission'/>
    <div className="w3-card w3-animate-zoom w3-white profile-body">
 <div className="w3-container idea-content">
 <label className="w3-text-blue"><b>Bid documnet is ready, to view in details click download</b></label><br/>
 <br/><br/>
- <a href={"http://localhost:9000/docService/contractor/getFile/"+this.state.contractorName}><button className="w3-btn w3-blue ">Download ...</button></a>
+ <a href={"http://localhost:9000/docService/contractor/getFile/"+this.state.contractorId}><button className="w3-btn w3-blue ">Download ...</button></a>
        </div>
 </div>
    </div>:<div style={{color : 'white'}}>loading...</div>
@@ -41,7 +41,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        loadContractorName: (details) => dispatch({type: actionType.SET_NAME,details }),
+        loadcontractorId: (details) => dispatch({type: actionType.SET_NAME,details }),
 
     }
 }

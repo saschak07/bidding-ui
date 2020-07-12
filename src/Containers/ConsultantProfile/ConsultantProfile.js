@@ -3,13 +3,11 @@ import './ConsultantProfile.css'
 import Statusbar from '../../Components/Status-bar/Status-bar'
 import { connect } from 'react-redux';
 import * as actionType from '../Store/action'
+import * as profileAttributes from './ProfileFields'
 class ConsultantProfile extends Component{
 
     state={
         profile:{
-            name:null,
-            address:null,
-            bidding_for_client:null
         }
     }
 
@@ -18,26 +16,13 @@ class ConsultantProfile extends Component{
         const updatedProfile = this.state.profile
         updatedProfile.bidding_for_client = this.props.match.params.org
         this.setState({profile:updatedProfile})
-        // axios.post('/docService/contractor',this.state.profile)
-        // .then(response => {
-        //     console.log(response)
-        // })
-        // .catch(error => {
-        //     console.log(error)
-        // })
         this.props.loadContractorName(this.state.profile)
         this.props.history.push('/past-projects/'+org)
     }
 
-    handleNameChange =(event) =>{
+    handleFieldChange(event,attribute){
         const updatedProfile = this.state.profile
-        updatedProfile.name=event.target.value;
-        this.setState({profile:updatedProfile})
-    }
-
-    handleAddressChange= (event) => {
-        const updatedProfile = this.state.profile
-        updatedProfile.address=event.target.value;
+        updatedProfile[attribute] = event.target.value
         this.setState({profile:updatedProfile})
     }
 
@@ -57,11 +42,15 @@ class ConsultantProfile extends Component{
 
                 <label className="w3-text-blue"><b>Consultant's Name</b></label>
                 <input className="w3-input w3-border" type="text"
-                onChange={this.handleNameChange} value={this.state.profile.name}/>
+                onChange={(event)=>this.handleFieldChange(event,profileAttributes.NAME)} value={this.state.profile.name}/>
                 
                 <label className="w3-text-blue"><b>Address</b></label>
                 <textarea className="w3-input w3-border" 
-                 onChange={this.handleAddressChange} value={this.state.profile.address}/>
+                 onChange={(event)=>this.handleFieldChange(event,profileAttributes.ADDRESS)} value={this.state.profile.address}/>
+
+                <label className="w3-text-blue"><b>Email</b></label>
+                <input className="w3-input w3-border" 
+                 onChange={(event)=>this.handleFieldChange(event,profileAttributes.EMAIL_ID)} value={this.state.profile.emailId}/>
 
                 <button className="w3-btn w3-blue profile-button"
                 onClick={(event) => 

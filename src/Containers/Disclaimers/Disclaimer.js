@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 class Disclaimer extends Component{
 
     handleNext  =(org) =>{
-        console.log(this.props.details.name);
+        console.log('disclaimer:'+this.props.details.name);
         this.props.history.push('/insert-idea/'+org)
     }
 

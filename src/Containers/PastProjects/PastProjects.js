@@ -1,6 +1,5 @@
 import React , {Component} from 'react'
 import './PastProjects.css'
-import {v4 as uuidv4} from 'uuid'
 import Statusbar from '../../Components/Status-bar/Status-bar'
 import ProjectForm from '../../Components/ProjectForm/ProjectForm'
 import { connect } from 'react-redux';
@@ -15,10 +14,12 @@ class PastProjects extends Component{
         }
 }
 componentDidMount(){
+    console.log(this.props.details)
     const updatedInfo = this.state.details;
     updatedInfo.name = this.props.details.name;
     updatedInfo.address = this.props.details.address;
     updatedInfo.bidding_for_client = this.props.details.bidding_for_client;
+    updatedInfo.emailId = this.props.details.emailId;
     this.setState({details:updatedInfo})
 }
 
@@ -28,18 +29,21 @@ componentDidMount(){
         this.setState({details:updatedInfo})
     }
 
-    handleClickNext = (org) =>{
+    handleClickNext = async (org) =>{
         console.log('name from redux:'+this.props.details)
         console.log(this.state)
-        axios.post('/docService/contractor',this.state.details)
-        .then(response => {
-            console.log(response)
-        })
-        .catch(error => {
-            console.log(error)
-        })
-        this.props.loadContractorName(this.state.details)
+       try{
+        const response = await axios.post('/docService/contractor',this.state.details)
+        console.log('past-exp-submitted'+response.data)
+        this.props.loadContractorName(response.data)
         this.props.history.push('/disclaimers/'+org)
+       } 
+        catch(error) {
+            console.log(error)
+            alert('Details could not be loaded due to server issues!! contact support')
+            this.props.history.push('/')
+        }
+        
     }
    
 

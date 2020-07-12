@@ -1,0 +1,25 @@
+.proposal-body{
+    width: 60%;
+    margin-top: 2%;
+    margin-left: 10%;
+    border-radius: 25px;
+    opacity: 0.8;
+}
+
+.proposal-content{
+    
+    padding: 0.2%;
+    margin-left: 10%;
+
+}
+.proposal-button{
+    margin-bottom: 1%;
+    padding: 2%;
+    align-items: flex-start
+}
+.proposal-header{
+    font-family: "Times New Roman", Times, serif;
+    color: blue;
+    font-weight: 900;
+    text-decoration: underline;
+}
