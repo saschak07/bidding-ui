@@ -7,7 +7,7 @@ class Contracts extends Component{
         cotractList : [
             {
                 id:1,
-                companyName:'Petroleum Authority of Uganda (PAU)',
+                companyName:'Petroleum Authority of Utopia (PAU)',
                 subject: 'Consultancy Services to develop a Joint Qualification System for the National Supplier Database (NSD)',
                 dateOfIssue:'1st May, 2020',
                 PRN:'PAU/CONS/19-20/00125-TSS'

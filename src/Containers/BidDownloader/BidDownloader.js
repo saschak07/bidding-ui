@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import * as actionType from '../Store/action'
 import Statusbar from '../../Components/Status-bar/Status-bar'
 
-class BidDownloader extends Component{
+export class BidDownloader extends Component{
     state = {
         contractorId : null
     }
@@ -12,7 +12,7 @@ class BidDownloader extends Component{
     }
     render(){
         const uplaodBox = this.state.contractorId?
-        <div>
+        <div data-testid='biddowlnloader'>
         <h1 style={{color:'white', 
        marginLeft:'2%',
        textDecoration:'underline'}}>

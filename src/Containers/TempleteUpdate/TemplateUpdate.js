@@ -49,7 +49,7 @@ class TempletUpdate extends Component{
          <label className="w3-text-blue"><b>Select Organzation name</b></label><br/>
          <select onChange={(event) =>this.handleSelect(event)}>
              <option>--select--</option>
-             <option value="Petroleum Authority of Uganda (PAU)">Petroleum Authority of Uganda (PAU)</option>
+             <option value="Petroleum Authority of Utopia (PAU)">Petroleum Authority of Utopia (PAU)</option>
              <option value="ABC Organization">ABC Organization</option>
          </select><br/><br/>
          <label className="w3-text-blue"><b>upload template file here</b></label><br/>
