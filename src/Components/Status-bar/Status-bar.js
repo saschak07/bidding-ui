@@ -24,22 +24,22 @@ const statusBar =(props) =>{
     }:{color:'black'};
     
     return (
-        <div className="status-container">
+        <div className="status-container" data-testid="status-bar">
         <div className="w3-container w3-blue w3-cell ">
-        <p style={profilestyle}>Profile submission  ></p>
+        <p data-testid='profile-submission' style={profilestyle}>Profile submission  ></p>
         </div>
       
         <div className="w3-container w3-blue w3-cell">
-            <p style={pastProject}> Past Projects  ></p>
+            <p data-testid='past-projects' style={pastProject}> Past Projects  ></p>
         </div> 
         <div className="w3-container w3-blue w3-cell">
-            <p style={disclaimers}> Disclaimers  ></p>
+            <p data-testid='disclaimer' style={disclaimers}> Disclaimers  ></p>
         </div>
         <div className="w3-container w3-blue w3-cell">
-            <p style={preview}> Preview  ></p>
+            <p data-testid='preview' style={preview}> Preview  ></p>
         </div>
         <div className="w3-container w3-blue w3-cell">
-            <p style={finalSubmission}> Final Submission </p>
+            <p data-testid='final-submission' style={finalSubmission}> Final Submission </p>
         </div>
       </div>
     )

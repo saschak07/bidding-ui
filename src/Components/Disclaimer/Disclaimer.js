@@ -3,7 +3,8 @@ import './Disclaimer.css'
 
 const disclaimer = (props) => {
     return (
-        <div className="w3-card w3-animate-zoom w3-white disclaimer-body">
+        <div className="w3-card w3-animate-zoom w3-white disclaimer-body"
+        data-testid="disclaimer-container">
             
             <div className="w3-container w3-white w3-cell disclaimer-content">
                <centre> <h2 className="code-header">CODE OF ETHICAL CONDUCT IN BUSINESS FOR BIDDERS AND PROVIDERS</h2></centre>

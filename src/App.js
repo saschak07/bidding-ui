@@ -14,8 +14,7 @@ function App() {
   return (
     <BrowserRouter>
     <div className="App">
-      {/* <p>Hello world!</p> */}
-      <Navbar/>
+      <Navbar />
       <Switch>
         <Route path="/profile/:org" component={ConsultantProfile} />
         <Route path="/past-projects/:org" component={PastProjects}/>

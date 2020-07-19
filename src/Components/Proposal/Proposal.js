@@ -2,9 +2,8 @@ import React from 'react'
 import './Proposal.css'
 
 const proposal = (props) =>{
-    console.log(props)
     return (
-        <div className="w3-card w3-animate-zoom w3-white proposal-body">
+        <div className="w3-card w3-animate-zoom w3-white proposal-body" data-testid='proposal-container'>
             <div className="proposal-content proposal-header"> <h2>{props.name} for {props.bidding_for_client}</h2></div>
             <div className="proposal-content">
             <div className=" w3-cell proposal-button">

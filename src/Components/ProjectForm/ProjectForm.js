@@ -3,7 +3,7 @@ import './ProjectForm.css'
 import * as ProjectAttributes from './ProjectAttributes'
 const projectForm = (props) => {
     return(
-            <div className="w3-card w3-animate-zoom w3-white project-body">
+            <div className="w3-card w3-animate-zoom w3-white project-body" data-testid="project-form">
          <div className="w3-container w3-white w3-cell project-content">
 
                 <label className="w3-text-blue"><b>Assignment name</b></label>
