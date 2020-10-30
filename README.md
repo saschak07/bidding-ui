@@ -1,4 +1,4 @@
-# Bidding document editor User Interface
+# User interface for Bidding document editor
 
 ![bidding-ui](https://user-images.githubusercontent.com/38581840/88451451-6ee12b00-ce74-11ea-9046-8ec179be1fe7.png)
 
